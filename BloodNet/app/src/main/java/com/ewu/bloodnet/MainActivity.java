@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        EditText etusername = findViewById(R.id.etLoginUsername);
-        EditText etpassword = findViewById(R.id.etLoginPassword);
+        EditText etUsername = findViewById(R.id.etLoginUsername);
+        EditText etPassword = findViewById(R.id.etLoginPassword);
         Button btnLogin = findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(view -> {
-            String inputUsername = etusername.getText().toString();
-            String inputPassword = etpassword.getText().toString();
-            SharedPreferences sp = getSharedPreferences("userdata", MODE_PRIVATE);
+            String inputUsername = etUsername.getText().toString();
+            String inputPassword = etPassword.getText().toString();
+            SharedPreferences sp = getSharedPreferences("user_data", MODE_PRIVATE);
             String savedUsername = sp.getString("username", "");
             String savedPassword = sp.getString("password", "");
 
@@ -57,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (inputUsername.equals(savedUsername) && inputPassword.equals(savedPassword)) {
+                Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT ).show();
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
+                finish();
             } else {
                 Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
             }
