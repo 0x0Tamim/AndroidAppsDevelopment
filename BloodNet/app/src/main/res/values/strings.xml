@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BloodNet</string>
+
+    <string name="bloodnet_text">
+    <![CDATA[<font color="#FF0000">Blood</font><font color="#228B22">Net</font>]]>
+</string>
+
+</resources>

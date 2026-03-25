@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="CalcBtnBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">#000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="CalcBtnOrange" parent="CalcBtnBase">
+        <item name="android:textColor">#4CAF50</item>
+    </style>
+
+    <style name="CalcBtnWhite" parent="CalcBtnBase">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+</resources>
