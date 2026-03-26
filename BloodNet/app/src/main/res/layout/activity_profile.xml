@@ -35,13 +35,11 @@
             android:inputType="textPersonName"
             android:layout_marginBottom="16dp"/>
 
-        <EditText
-            android:id="@+id/etPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter your blood group"
-            android:inputType="phone"
-            android:layout_marginBottom="16dp"/>
+       <Spinner
+           android:id="@+id/spBloodGroup"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="16dp"/>
 
         <EditText
             android:id="@+id/etPhone"
@@ -51,13 +49,27 @@
             android:inputType="phone"
             android:layout_marginBottom="16dp"/>
 
-
         <EditText
-            android:id="@+id/etLocation"
+            android:id="@+id/etWhatsapp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Location (Area, City)"
-            android:inputType="textPostalAddress"
+            android:hint="WhatsApp Number (Optional)"
+            android:inputType="phone"
+            android:layout_marginBottom="16dp"/>
+
+
+        <Spinner
+            android:id="@+id/spDistrict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+
+        <EditText
+            android:id="@+id/etArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Area (e.g. Dhanmondi)"
             android:layout_marginBottom="16dp"/>
 
         <EditText
@@ -78,3 +90,4 @@
     </LinearLayout>
 
 </ScrollView>
+

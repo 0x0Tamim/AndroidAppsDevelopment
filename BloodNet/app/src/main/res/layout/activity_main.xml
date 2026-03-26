@@ -26,7 +26,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="1dp"
         android:gravity="center"
         android:text="Connecting Donors, Saving Lives"
         android:textColor="#5CA904"

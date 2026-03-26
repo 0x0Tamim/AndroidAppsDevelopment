@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodNet">
         <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity

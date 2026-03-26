@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#ccffff"
+        android:background="#ccffcc"
         android:padding="16dp"
         android:layout_marginBottom="16dp"
         android:elevation="5dp"> <!-- z axis depth or height-->
@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#ccffff"
+        android:background="#ccffcc"
         android:padding="16dp"
         android:layout_marginBottom="16dp"
         android:elevation="5dp">
