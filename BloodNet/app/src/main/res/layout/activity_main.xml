@@ -13,6 +13,7 @@
         android:layout_marginTop="100dp"
         android:src="@drawable/bloodnet_logo" />
 
+    <!-- BloodNet title - lal ar sobuj color e - strings.xml e HTML ache -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="match_parent"
@@ -40,6 +41,7 @@
         android:layout_marginBottom="16dp"
         android:hint="Enter Username"
         android:inputType="text" />
+
 
     <EditText
         android:id="@+id/etLoginPassword"

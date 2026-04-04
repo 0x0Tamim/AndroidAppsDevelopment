@@ -14,7 +14,6 @@
         android:layout_marginTop="100dp"
         android:src="@drawable/bloodnet_logo"/>
 
-    
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
@@ -24,6 +23,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginBottom="32dp"/>
+
     <LinearLayout
         android:id="@+id/cardProfile"
         android:clickable="true"
@@ -34,41 +34,36 @@
         android:background="#ccffcc"
         android:padding="16dp"
         android:layout_marginBottom="16dp"
-        android:elevation="5dp"> <!-- z axis depth or height-->
+        android:elevation="5dp">
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_profile"
-        android:layout_marginEnd="16dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_profile"
+            android:layout_marginEnd="16dp"/>
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Profile"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add / Update your info"
-            android:textSize="14sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Profile"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add / Update your info"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp"/>
 
-
-    </LinearLayout>
-
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -84,13 +79,11 @@
         android:layout_marginBottom="16dp"
         android:elevation="5dp">
 
-
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_search"
             android:layout_marginEnd="16dp"/>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -114,6 +107,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

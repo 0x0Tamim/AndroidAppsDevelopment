@@ -5,20 +5,24 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
+// ei class ta database er kaj kore - SQLite
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "BloodNet.db";
-    private static final int DATABASE_VERSION = 1;
+    // database er nam ar version
+    String dbName = "BloodNet.db";
+    int dbVersion = 1;
 
+    // constructor - context lagbe database banate
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, "BloodNet.db", null, 1);
     }
 
+    // prothombar app open hoile ei function call hobe, table banabe
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String createTable = "CREATE TABLE donors (" +
+        // donors table create
+        String query = "CREATE TABLE donors (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "name TEXT, " +
                 "blood_group TEXT, " +
@@ -29,21 +33,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "last_donation TEXT" +
                 ")";
 
-        db.execSQL(createTable);
+        // query execute korchi
+        db.execSQL(query);
     }
 
+    // database er version change hole ei function call hobe
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // purano table delete kore notun ta banabo
         db.execSQL("DROP TABLE IF EXISTS donors");
         onCreate(db);
     }
 
-
+    // ei function donor er data save korbe database e
     public boolean insertDonor(String name, String bloodGroup, String phone,
                                String whatsapp, String district, String area, String lastDonation) {
 
+        // writable database open korchi
         SQLiteDatabase db = this.getWritableDatabase();
 
+        // ContentValues e data rakhi
         ContentValues values = new ContentValues();
         values.put("name", name);
         values.put("blood_group", bloodGroup);
@@ -53,13 +62,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("area", area);
         values.put("last_donation", lastDonation);
 
+        // insert korchi, result hobe row id, -1 hoile error
         long result = db.insert("donors", null, values);
 
-        return result != -1;
+        // jodi -1 na hoy tahole success, true return korbo
+        if (result != -1) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
-
-
 }
-
-

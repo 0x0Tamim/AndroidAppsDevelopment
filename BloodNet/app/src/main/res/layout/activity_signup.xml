@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -14,6 +13,7 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/bloodnet_logo" />
 
+    <!-- BloodNet title - strings.xml theke HTML format e asbe -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="match_parent"
@@ -34,7 +34,6 @@
         android:layout_marginBottom="24dp"
         android:layout_marginTop="10dp"/>
 
-
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
@@ -42,6 +41,7 @@
         android:hint="Enter Username"
         android:inputType="text"
         android:layout_marginBottom="16dp"/>
+
 
     <EditText
         android:id="@+id/etEmail"
@@ -51,6 +51,7 @@
         android:inputType="textEmailAddress"
         android:layout_marginBottom="16dp"/>
 
+    <!-- password input, characters hide thakbe -->
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
@@ -73,4 +74,5 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:layout_marginTop="8dp"/>
+
 </LinearLayout>
