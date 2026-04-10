@@ -1,5 +1,8 @@
 package com.ewu.loginapp;
 
+import static com.ewu.loginapp.SignupActivity.savedPassword;
+import static com.ewu.loginapp.SignupActivity.savedUsername;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -36,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
             if(username.isEmpty()||password.isEmpty()){
                 Toast.makeText(this,"Please all fields", Toast.LENGTH_SHORT).show();
             }
-            else if(username.equals("admin") && password.equals("12345")){
+            else if(username.equals(savedUsername) && password.equals(savedPassword)){
                 Toast.makeText(this,  "Login Successful", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(i);
             }
             else{
                 Toast.makeText(this,"Invalid Credentials", Toast.LENGTH_SHORT).show();
