@@ -1,9 +1,7 @@
 package com.ewu.loginapp;
 
-import static com.ewu.loginapp.SignupActivity.savedPassword;
-import static com.ewu.loginapp.SignupActivity.savedUsername;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnSignup = findViewById(R.id.btnLogin);
+        btnSignup = findViewById(R.id.btnSignup);
 
 
         btnLogin.setOnClickListener(v -> {
@@ -37,15 +35,25 @@ public class MainActivity extends AppCompatActivity {
             String password = etPassword.getText().toString();
 
             if(username.isEmpty()||password.isEmpty()){
-                Toast.makeText(this,"Please all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Please fill all fields", Toast.LENGTH_SHORT).show();
             }
-            else if(username.equals(savedUsername) && password.equals(savedPassword)){
-                Toast.makeText(this,  "Login Successful", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(i);
-            }
-            else{
-                Toast.makeText(this,"Invalid Credentials", Toast.LENGTH_SHORT).show();
+            else {
+
+                SharedPreferences sp = getSharedPreferences("LoginData", MODE_PRIVATE);
+                String savedUsername = sp.getString("username", "");
+                String savedPassword =sp.getString("password", "");
+
+                if(username.equals(savedUsername) && password.equals(savedPassword)){
+                    Toast.makeText(this,"Login Successful", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(i);
+                }
+
+
+            else {
+                    Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
