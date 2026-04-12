@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee"
+    tools:context=".SignUpActivity">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BirthdayInfo Activity"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#ff8800"
+        android:padding="8dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etName"
+                android:inputType="textCapWords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter name"/>
+        </LinearLayout>
+
+        <!-- Image -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black"
+                android:contentDescription="Name Icon"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Phone -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"/>
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Enter your phone number"/>
+
+    <!-- Date of Birth -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of Birth"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"/>
+
+    <EditText
+        android:id="@+id/etDob"
+        android:inputType="datetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="dd/MM/yyyy"/>
+
+    <!-- Space -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Save"/>
+    </LinearLayout>
+
+</LinearLayout>
