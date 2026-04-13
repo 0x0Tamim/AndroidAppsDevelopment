@@ -1,5 +1,6 @@
 package com.ewu.loginapp;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,10 +14,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+
 public class MainActivity extends AppCompatActivity {
 
     EditText etUsername, etPassword;
     Button btnLogin, btnSignup;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnSignup = findViewById(R.id.btnSignup);
-
+        db = new DBHelper(this);
 
         btnLogin.setOnClickListener(v -> {
 
@@ -39,15 +42,25 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
 
-                SharedPreferences sp = getSharedPreferences("LoginData", MODE_PRIVATE);
-                String savedUsername = sp.getString("username", "");
-                String savedPassword =sp.getString("password", "");
 
-                if(username.equals(savedUsername) && password.equals(savedPassword)){
-                    Toast.makeText(this,"Login Successful", Toast.LENGTH_SHORT).show();
+                   if(db.checkUser(username, password)){
+
+                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+
                     Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                    i.putExtra("username", username);
                     startActivity(i);
                 }
+
+//                SharedPreferences sp = getSharedPreferences("LoginData", MODE_PRIVATE);
+//                String savedUsername = sp.getString("username", "");
+//                String savedPassword =sp.getString("password", "");
+//
+//                if(username.equals(savedUsername) && password.equals(savedPassword)){
+//                    Toast.makeText(this,"Login Successful", Toast.LENGTH_SHORT).show();
+//                    Intent i = new Intent(MainActivity.this, HomeActivity.class);
+//                    startActivity(i);
+//                }
 
 
             else {

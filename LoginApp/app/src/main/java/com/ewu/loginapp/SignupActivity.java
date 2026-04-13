@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SignupActivity extends AppCompatActivity {
 
+    DBHelper db;
     EditText etNewUsername, etNewPassword, etConfirmPassword;
     Button btnSignup;
 
@@ -30,6 +31,7 @@ public class SignupActivity extends AppCompatActivity {
         etNewPassword = findViewById(R.id.etNewPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         btnSignup = findViewById(R.id.btnSignup);
+        db = new DBHelper(this);
 
 
         btnSignup.setOnClickListener(view -> {
@@ -47,16 +49,25 @@ public class SignupActivity extends AppCompatActivity {
             }
 
             else{
-                SharedPreferences sp = getSharedPreferences("LoginData", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
+//                SharedPreferences sp = getSharedPreferences("LoginData", MODE_PRIVATE);
+//                SharedPreferences.Editor editor = sp.edit();
+//
+//                editor.putString("username",username);
+//                editor.putString("password", password);
+//
+//                editor.apply();
+//
+//                Toast.makeText(this,"Sign Up Successful",Toast.LENGTH_SHORT).show();
 
-                editor.putString("username",username);
-                editor.putString("password", password);
+                boolean inserted = db.insertUser(username, password);
 
-                editor.apply();
+                if(inserted){
+                    Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show();
+                    finish(); // back to login
+                } else {
+                    Toast.makeText(this, "Signup Failed", Toast.LENGTH_SHORT).show();
+                }
 
-                Toast.makeText(this,"Sign Up Successful",Toast.LENGTH_SHORT).show();
-                finish();
             }
 
 
