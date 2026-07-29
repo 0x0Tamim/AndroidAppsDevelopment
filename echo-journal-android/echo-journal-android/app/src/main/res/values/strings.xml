@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Echo Journal</string>
+
+    <string name="drive_web_client_id" translatable="false">
+        524734230592-tb3nlgcgkl7miin8emnjhq1535ss4coa.apps.googleusercontent.com
+    </string>
+</resources>
