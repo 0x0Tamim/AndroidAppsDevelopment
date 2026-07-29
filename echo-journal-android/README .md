@@ -58,6 +58,4 @@ Photos capture what things looked like. This is for capturing what you actually 
 
 One day these recordings might not just remind me what happened. They might remind me who I used to be.
 
-## License
 
-MIT — do whatever you want with it.
